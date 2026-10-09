@@ -1,7 +1,9 @@
-load(":defs.bzl", "long_running", "nested_buck")
+load(":defs.bzl", "long_running", "nested_buck", "pwd_run")
 
 trivial_build(name = "rule")
 
 long_running(name = "long_running")
 
 nested_buck(name = "nested_buck")
+
+pwd_run(name = "pwd_run")

@@ -40,3 +40,15 @@ nested_buck = rule(
     impl = _nested_buck_impl,
     attrs = {},
 )
+
+def _pwd_run_impl(_ctx: AnalysisContext) -> list[Provider]:
+    return [
+        DefaultInfo(),
+        RunInfo(args = cmd_args("fbpython", "-c", "import os; print(os.getcwd())")),
+    ]
+
+# Prints the working directory a `buck2 run` target starts in.
+pwd_run = rule(
+    impl = _pwd_run_impl,
+    attrs = {},
+)
