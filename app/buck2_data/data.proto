@@ -1967,6 +1967,7 @@ message CleanStaleResult {
     MANUAL_EXPLICIT = 1;
     MANUAL_CONFIGURED = 2;
     SCHEDULED = 3;
+    STARTUP = 4;
   }
 
   enum PolicyMode {
